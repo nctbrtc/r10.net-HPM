@@ -22,24 +22,33 @@ if (n) {
         var params = url.split("$");
 
 
-        var hocam = "Merhaba hocam, \n [url=" + params[2] + "][B][COLOR=#41A85F]" + decodeURI(params[1]) + "[/COLOR][/B][/url] konunuz icin yaziyorum. Detaylari alabilir miyim?";
-        document.querySelector("#message_form > div.head > div:nth-child(3) > div:nth-child(2) > input").value = decodeURI(params[1]) + " konusu hakkinda";
+        var hocam = "Hocam selamlar, \n [url=" + params[2] + "][B][COLOR=#D14841]" + decodeURI(params[1]) + "[/COLOR][/B][/url] konunuz icin yaziyorum. Detaylari alabilir miyim ?";
+        document.querySelector("#message_form > div.head > div:nth-child(3) > div:nth-child(2) > input").value = decodeURI(params[1]).replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '');
+ + " konusu hakkinda";
         document.querySelector("#vB_Editor_001 > div > div.fr-wrapper > div").click();
         document.querySelector("#r10BBCode-1").click();
         document.querySelector("#vB_Editor_001 > div > div.fr-wrapper > div").innerText = hocam;
 
-        setTimeout(gonderebas, 1500); // Gonder Butonuna basar 1.5 sn icinde
+    //  setTimeout(gonderebas, 1000); // Gonder Butonuna basar 1.5 sn icinde
 
         function gonderebas() {
             document.querySelector("#vB_Editor_001_save").click();
         }
+
+         function kapanSusam() {
+           window.close();
+        }
+
     }
 
 }
 
-if (konumu) {
+if (konumu)
+
+{
+
     var baslik = document.querySelector("body > main > div > div.breadCrumb > div.top > div.left > div:nth-child(2) > span > h2").innerText;
-    var birinci = document.querySelector("div.postList li.post[data-order='1'] .rank");
+    var birinci = document.getElementsByClassName("rank");
     var hizliPM = document.createElement("span");
     var pmLink = document.querySelector("div.postUser > div.userLeft > div.smallInfo > div.name > ul > li:nth-child(2) > a").href;
 
@@ -48,7 +57,11 @@ if (konumu) {
     var hpmLink = pmLink + "?hpm=true$" + baslik + "$" + url;
 
 
-    hizliPM.innerHTML = "<a style='float: right; height: 38px; display: flex; align-items: center; margin-left: 4px;' class='btn btn-success text-white' " +
-        "href='" + encodeURI(hpmLink) + "'><i class='fa fa-bolt' style='margin-right: 4px;'></i> <b>HPM</b></a>";
-    if (birinci) birinci.appendChild(hizliPM);
+    hizliPM.innerHTML = "<div style='float:right;height:32px;margin-left: 4px;color:white !important;text-decoration:none;' class='btn btn-success text-white'> <a class='text-white'" +
+        "href='" + encodeURI(hpmLink) + "'><b style='color:#ffffff'><i class='fa fa-bolt'></i> HPM </b></a></div>";
+    birinci[0].appendChild(hizliPM);
 }
+
+
+console.log(n);
+console.log(konumu);
