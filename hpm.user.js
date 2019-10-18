@@ -12,6 +12,13 @@ console.log(url);
 var n = url.includes("private.php");
 var konumu = url.includes(".html");
 
+setTimeout(otoYenileyiKapat, 10000); // Otomatik Sayfa Yenilemeyi 10 saniye sonra aktifsizlestirir.
+ function otoYenileyiKapat() 
+{
+ window.stop();
+ console.log('otomatik refresh aktifsizlestirildi ! ');
+
+ }
 
 if (n) {
     var hpm = url.includes("hpm=true");
