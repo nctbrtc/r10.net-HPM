@@ -2,21 +2,24 @@
 // @name         HPM
 // @namespace    https://www.r10.net/members/52078-entriko.html
 // @version      0.1
-// @description  Hocam Detayli PM alabilir miyim klisesi :)
+// @description  Hocam Detayli PM alabilir miyim şeysi :)
 // @author       entriko
 // @match        https://*.r10.net/*
 // @grant        none
 // ==/UserScript==
 var url = window.location.href;
-console.log(url);
 var n = url.includes("private.php");
 var konumu = url.includes(".html");
 
+[].forEach.call(document.querySelectorAll('img'), function (img) { if (/\.gif/i.test(img.src)) img.remove() })
+
+console.log('gif ler kaldirildi, oh ne guzel temiz hava ⛅')
+
 setTimeout(otoYenileyiKapat, 10000); // Otomatik Sayfa Yenilemeyi 10 saniye sonra aktifsizlestirir.
- function otoYenileyiKapat() 
+ function otoYenileyiKapat()
 {
  window.stop();
- console.log('otomatik refresh aktifsizlestirildi ! ');
+ console.log('otomatik refresh aktifsizlestirildi 🚶 ');
 
  }
 
@@ -70,5 +73,3 @@ if (konumu)
 }
 
 
-console.log(n);
-console.log(konumu);
