@@ -15,7 +15,18 @@ var konumu = url.includes(".html");
 
 console.log('gif ler kaldirildi, oh ne guzel temiz hava ⛅')
 
-setTimeout(otoYenileyiKapat, 10000); // Otomatik Sayfa Yenilemeyi 10 saniye sonra aktifsizlestirir.
+
+
+setTimeout(solReklam, 1000); // Otomatik Sayfa Yenilemeyi 10 saniye sonra aktifsizlestirir.
+ function solReklam()
+{
+ document.querySelector("body > main > div.rzf98ff9f70928bcd917 > div > div.head > button > i").click():
+
+ console.log('sol bar reklam kapatildi');
+
+ }
+
+setTimeout(otoYenileyiKapat, 5000); // Otomatik Sayfa Yenilemeyi 10 saniye sonra aktifsizlestirir.
  function otoYenileyiKapat()
 {
  window.stop();
