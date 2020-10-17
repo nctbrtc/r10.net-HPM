@@ -20,7 +20,8 @@ console.log('gif ler kaldirildi, oh ne guzel temiz hava ⛅')
 setTimeout(solReklam, 1000); // Otomatik Sayfa Yenilemeyi 10 saniye sonra aktifsizlestirir.
  function solReklam()
 {
- document.querySelector("body > main > div.rzf98ff9f70928bcd917 > div > div.head > button > i").click():
+var xPathRes = document.evaluate ('/html/body/main/div[1]/div/div[1]/button/i', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+xPathRes.singleNodeValue.click();
 
  console.log('sol bar reklam kapatildi');
 
