@@ -7,6 +7,16 @@
 // @match        https://*.r10.net/*
 // @grant        none
 // ==/UserScript==
+
+// 12.23.2020 Yeni tema ile gelen buyuk header i kucultuyoruz :
+
+document.querySelector("body > header").style.zoom="0.8";
+	document.querySelector("body > header > div.headerTop").style.zoom='0.8';
+	document.querySelector("body > header").style.marginTop="-2%";
+	document.querySelector("body > header > div.headerTop > div > div.user > div.icon.messages > div.notificationList").style.zoom="1.5";
+	document.querySelector("body > header > div.headerTop > div > div.user > div.icon.notify > div.notificationList > div.list").style.zoom="1.5";
+
+
 var url = window.location.href;
 var n = url.includes("private.php");
 var konumu = url.includes(".html");
@@ -81,10 +91,3 @@ if (konumu)
     birinci[0].appendChild(hizliPM);
 }
 
-// 12.23.2020 Yeni tema ile gelen buyuk header i kucultuyoruz :
-
-document.querySelector("body > header").style.zoom="0.8";
-	document.querySelector("body > header > div.headerTop").style.zoom='0.8';
-	document.querySelector("body > header").style.marginTop="-2%";
-	document.querySelector("body > header > div.headerTop > div > div.user > div.icon.messages > div.notificationList").style.zoom="1.5";
-	document.querySelector("body > header > div.headerTop > div > div.user > div.icon.notify > div.notificationList > div.list").style.zoom="1.5";
